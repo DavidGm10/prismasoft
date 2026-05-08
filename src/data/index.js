@@ -170,7 +170,7 @@ export const projects = [
 export const team = [
   {
     id: 1,
-    name: "Alex Ramírez",           // ← Cambia tu nombre
+    name: "Dylan Antonio Yampuezan",           // ← Cambia tu nombre
     role: "Full Stack Developer",
     specialty: "Arquitectura de software y sistemas escalables",
     bio: "Apasionado por construir soluciones robustas que impactan negocios reales. Especialista en arquitecturas modernas y experiencias de usuario fluidas.", // ← Tu descripción
@@ -186,7 +186,7 @@ export const team = [
   },
   {
     id: 2,
-    name: "Sofía Mendoza",
+    name: "Jose David Vanegas Martinez",
     role: "Backend Developer",
     specialty: "APIs, microservicios y bases de datos",
     bio: "Arquitecta de sistemas de alto rendimiento. Convierte requerimientos complejos en soluciones elegantes y eficientes.",
@@ -198,7 +198,7 @@ export const team = [
   },
   {
     id: 3,
-    name: "Mateo Torres",
+    name: "Wilson David Gomez Gomez",
     role: "Frontend Developer",
     specialty: "UI/UX e interfaces interactivas",
     bio: "Diseñador y desarrollador frontend enfocado en crear experiencias visualmente impactantes que convierten visitantes en clientes.",

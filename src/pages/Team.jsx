@@ -195,13 +195,13 @@ export default function Team() {
           >
             <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>✨</div>
             <h3 style={{ fontSize: "1.5rem", fontWeight: "700", marginBottom: "0.75rem", fontFamily: "'Exo 2', sans-serif" }}>
-              ¿Quieres unirte al equipo?
+              ¿Tienes una idea de software?
             </h3>
             <p style={{ color: "rgba(255,255,255,0.5)", marginBottom: "1.75rem", fontSize: "0.9rem" }}>
-              Siempre estamos buscando talento apasionado por la tecnología y el desarrollo de software.
+              En PrismaSoft transformamos proyectos en soluciones digitales. Contáctanos y hagamos realidad tu visión.
             </p>
             <a href="/trabaja-con-nosotros" style={{ textDecoration: "none" }}>
-              <button className="btn-neon">Aplica ahora →</button>
+              <button className="btn-neon">Contáctanos ahora →</button>
             </a>
           </div>
         </div>

@@ -37,7 +37,6 @@ const initialForm = {
   email: "",
   phone: "",
   projectType: "",
-  budget: "",
   message: "",
 };
 
@@ -49,7 +48,10 @@ export default function WorkWithUs() {
   const validate = () => {
     const e = {};
     if (!form.name.trim()) e.name = "El nombre es requerido";
-    if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = "Email inválido";
+    if (!form.email.trim()) e.email = "El correo es requerido";
+    else if (!form.email.includes("@") || !/\S+@\S+\.\S+/.test(form.email)) e.email = "Ingresa un correo válido con @";
+    if (!form.phone.trim()) e.phone = "El teléfono es requerido";
+    else if (!/^\d{10}$/.test(form.phone)) e.phone = "El teléfono debe tener exactamente 10 dígitos";
     if (!form.projectType) e.projectType = "Selecciona un tipo de proyecto";
     if (!form.message.trim() || form.message.length < 20) e.message = "Describe tu proyecto (mínimo 20 caracteres)";
     setErrors(e);
@@ -58,7 +60,8 @@ export default function WorkWithUs() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((f) => ({ ...f, [name]: value }));
+    const nextValue = name === "phone" ? value.replace(/\D/g, "").slice(0, 10) : value;
+    setForm((f) => ({ ...f, [name]: nextValue }));
     if (errors[name]) setErrors((err) => ({ ...err, [name]: "" }));
   };
 
@@ -76,7 +79,6 @@ export default function WorkWithUs() {
     //     email: form.email,
     //     phone: form.phone,
     //     project_type: form.projectType,
-    //     budget: form.budget,
     //     message: form.message,
     //   }, PUBLIC_KEY);
     //   setStatus("success");
@@ -210,78 +212,52 @@ export default function WorkWithUs() {
 
                   <div>
                     <label style={{ display: "block", fontSize: "0.75rem", color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem", letterSpacing: "0.08em" }}>
-                      TELÉFONO
+                      TELÉFONO *
                     </label>
                     <input
                       name="phone"
                       type="tel"
                       value={form.phone}
                       onChange={handleChange}
-                      placeholder="+1 555 123 4567"
+                      inputMode="numeric"
+                      maxLength={10}
+                      pattern="[0-9]{10}"
+                      placeholder="3104602013"
                       style={inputStyle("phone")}
                       onFocus={(e) => { e.target.style.borderColor = "var(--cyan)"; e.target.style.boxShadow = "0 0 0 2px rgba(0,245,255,0.1)"; }}
-                      onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.1)"; e.target.style.boxShadow = "none"; }}
+                      onBlur={(e) => { if (!errors.phone) { e.target.style.borderColor = "rgba(255,255,255,0.1)"; e.target.style.boxShadow = "none"; } }}
                     />
+                    {errors.phone && <div style={{ fontSize: "0.72rem", color: "var(--pink)", marginTop: "0.3rem" }}>{errors.phone}</div>}
                   </div>
                 </div>
 
-                {/* Row: Project type + Budget */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
-                  <div>
-                    <label style={{ display: "block", fontSize: "0.75rem", color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem", letterSpacing: "0.08em" }}>
-                      TIPO DE PROYECTO *
-                    </label>
-                    <select
-                      name="projectType"
-                      value={form.projectType}
-                      onChange={handleChange}
-                      style={{
-                        ...inputStyle("projectType"),
-                        cursor: "pointer",
-                        appearance: "none",
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300f5ff' d='M6 8L0 0h12z'/%3E%3C/svg%3E")`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "right 1rem center",
-                        paddingRight: "2.5rem",
-                      }}
-                      onFocus={(e) => { e.target.style.borderColor = "var(--cyan)"; e.target.style.boxShadow = "0 0 0 2px rgba(0,245,255,0.1)"; }}
-                      onBlur={(e) => { if (!errors.projectType) { e.target.style.borderColor = "rgba(255,255,255,0.1)"; e.target.style.boxShadow = "none"; } }}
-                    >
-                      <option value="" style={{ background: "#030712" }}>Selecciona uno...</option>
-                      {projectTypes.map((t) => (
-                        <option key={t} value={t} style={{ background: "#030712" }}>{t}</option>
-                      ))}
-                    </select>
-                    {errors.projectType && <div style={{ fontSize: "0.72rem", color: "var(--pink)", marginTop: "0.3rem" }}>{errors.projectType}</div>}
-                  </div>
-
-                  <div>
-                    <label style={{ display: "block", fontSize: "0.75rem", color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem", letterSpacing: "0.08em" }}>
-                      PRESUPUESTO APROXIMADO
-                    </label>
-                    <select
-                      name="budget"
-                      value={form.budget}
-                      onChange={handleChange}
-                      style={{
-                        ...inputStyle("budget"),
-                        cursor: "pointer",
-                        appearance: "none",
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300f5ff' d='M6 8L0 0h12z'/%3E%3C/svg%3E")`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "right 1rem center",
-                        paddingRight: "2.5rem",
-                      }}
-                    >
-                      <option value="" style={{ background: "#030712" }}>Selecciona...</option>
-                      <option value="< $1,000" style={{ background: "#030712" }}>Menos de $1,000</option>
-                      <option value="$1,000 - $5,000" style={{ background: "#030712" }}>$1,000 - $5,000</option>
-                      <option value="$5,000 - $15,000" style={{ background: "#030712" }}>$5,000 - $15,000</option>
-                      <option value="$15,000 - $50,000" style={{ background: "#030712" }}>$15,000 - $50,000</option>
-                      <option value="> $50,000" style={{ background: "#030712" }}>Más de $50,000</option>
-                      <option value="A definir" style={{ background: "#030712" }}>A definir</option>
-                    </select>
-                  </div>
+                {/* Project type */}
+                <div style={{ marginBottom: "1.25rem" }}>
+                  <label style={{ display: "block", fontSize: "0.75rem", color: "rgba(255,255,255,0.5)", marginBottom: "0.4rem", letterSpacing: "0.08em" }}>
+                    TIPO DE PROYECTO *
+                  </label>
+                  <select
+                    name="projectType"
+                    value={form.projectType}
+                    onChange={handleChange}
+                    style={{
+                      ...inputStyle("projectType"),
+                      cursor: "pointer",
+                      appearance: "none",
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300f5ff' d='M6 8L0 0h12z'/%3E%3C/svg%3E")`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "right 1rem center",
+                      paddingRight: "2.5rem",
+                    }}
+                    onFocus={(e) => { e.target.style.borderColor = "var(--cyan)"; e.target.style.boxShadow = "0 0 0 2px rgba(0,245,255,0.1)"; }}
+                    onBlur={(e) => { if (!errors.projectType) { e.target.style.borderColor = "rgba(255,255,255,0.1)"; e.target.style.boxShadow = "none"; } }}
+                  >
+                    <option value="" style={{ background: "#030712" }}>Selecciona uno...</option>
+                    {projectTypes.map((t) => (
+                      <option key={t} value={t} style={{ background: "#030712" }}>{t}</option>
+                    ))}
+                  </select>
+                  {errors.projectType && <div style={{ fontSize: "0.72rem", color: "var(--pink)", marginTop: "0.3rem" }}>{errors.projectType}</div>}
                 </div>
 
                 {/* Message */}

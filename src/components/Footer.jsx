@@ -2,6 +2,7 @@
 // Footer.jsx — Footer moderno
 // ============================================================
 import { Link } from "react-router-dom";
+import { IconEmail, IconWhatsApp } from "./Icons";
 
 const links = [
   { label: "Inicio", path: "/" },
@@ -113,19 +114,33 @@ export default function Footer() {
           <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
             <a
               href="mailto:prismasoftt@gmail.com"
-              style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem", textDecoration: "none" }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--cyan)")}
-              onMouseLeave={(e) => (e.target.style.color = "rgba(255,255,255,0.5)")}
+              style={{
+                color: "rgba(255,255,255,0.5)",
+                fontSize: "0.85rem",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cyan)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
             >
-              📧 prismasoftt@gmail.com
+              <IconEmail size={16} color="currentColor" /> prismasoftt@gmail.com
             </a>
             <a
-              href="https://wa.me/1234567890"
-              style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.85rem", textDecoration: "none" }}
-              onMouseEnter={(e) => (e.target.style.color = "var(--green)")}
-              onMouseLeave={(e) => (e.target.style.color = "rgba(255,255,255,0.5)")}
+              href="https://wa.me/573053764625"
+              style={{
+                color: "rgba(255,255,255,0.5)",
+                fontSize: "0.85rem",
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--green)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
             >
-              💬 WhatsApp
+              <IconWhatsApp size={16} color="currentColor" /> WhatsApp
             </a>
           </div>
         </div>

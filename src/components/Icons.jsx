@@ -241,6 +241,39 @@ export function IconGem({ color = "currentColor", size = 24 }) {
   );
 }
 
+export function IconWhatsApp({ color = "currentColor", size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path
+        fill={color}
+        d="M16.04 3.2c-6.97 0-12.64 5.58-12.64 12.45 0 2.2.59 4.35 1.7 6.24L3.3 28.8l7.12-1.84a12.82 12.82 0 0 0 5.62 1.3c6.97 0 12.64-5.58 12.64-12.45S23.01 3.2 16.04 3.2Zm0 22.92c-1.85 0-3.66-.49-5.24-1.41l-.38-.22-4.22 1.09 1.13-4.02-.25-.41a10.13 10.13 0 0 1-1.55-5.5c0-5.69 4.72-10.31 10.51-10.31s10.51 4.62 10.51 10.31-4.72 10.47-10.51 10.47Zm5.77-7.84c-.31-.15-1.86-.9-2.15-1-.29-.11-.5-.15-.72.15-.21.31-.82 1-.99 1.2-.18.2-.36.23-.67.08-.31-.15-1.31-.47-2.49-1.51-.92-.8-1.54-1.8-1.72-2.1-.18-.31-.02-.47.13-.62.14-.13.31-.36.47-.54.16-.18.21-.31.31-.51.1-.2.05-.38-.03-.53-.08-.15-.72-1.7-.98-2.33-.26-.61-.52-.53-.72-.54h-.61c-.21 0-.55.08-.84.38-.29.31-1.1 1.06-1.1 2.58s1.13 3 1.29 3.2c.16.2 2.23 3.34 5.4 4.68.75.32 1.34.51 1.8.65.76.24 1.45.21 1.99.13.61-.09 1.86-.75 2.12-1.47.26-.72.26-1.34.18-1.47-.08-.13-.29-.2-.6-.35Z"
+      />
+    </svg>
+  );
+}
+
+export function IconEmail({ color = "currentColor", size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <rect x="4" y="7" width="24" height="18" rx="3" stroke={color} strokeWidth="2.2" />
+      <path d="M6 10l10 7 10-7" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.5 23l7.2-6.2M25.5 23l-7.2-6.2" stroke={color} strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function IconLinkedIn({ color = "currentColor", size = 24 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <rect x="5" y="5" width="22" height="22" rx="3" stroke={color} strokeWidth="2.2" />
+      <path d="M11.5 14v8" stroke={color} strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M16 22v-8" stroke={color} strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M16 17.4c0-2.1 1.3-3.5 3.3-3.5 2.2 0 3.2 1.5 3.2 3.8V22" stroke={color} strokeWidth="2.4" strokeLinecap="round" />
+      <circle cx="11.5" cy="10.5" r="1.45" fill={color} />
+    </svg>
+  );
+}
+
 // Map de iconos por servicio (para usar desde data)
 export const serviceIconMap = {
   web: IconCode,

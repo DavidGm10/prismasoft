@@ -3,10 +3,11 @@
 // ============================================================
 import MainLayout from "../layouts/MainLayout";
 import PrismaticCard from "../components/PrismaticCard";
+import { IconEmail, IconLinkedIn, IconWhatsApp } from "../components/Icons";
 
 const contactInfo = [
   {
-    icon: "📧",
+    icon: IconEmail,
     label: "Email",
     value: "prismasoftt@gmail.com",
     link: "mailto:prismasoftt@gmail.com",
@@ -14,7 +15,7 @@ const contactInfo = [
     hint: "Respuesta en menos de 24h",
   },
   {
-    icon: "💬",
+    icon: IconWhatsApp,
     label: "WhatsApp",
     value: "+57 3053764625",
     link: "https://wa.me/573053764625",
@@ -22,7 +23,7 @@ const contactInfo = [
     hint: "Disponible L-V, 9am-6pm",
   },
   {
-    icon: "💼",
+    icon: IconLinkedIn,
     label: "LinkedIn",
     value: "/company/prismasoft",
     link: "https://linkedin.com/company/prismasoft",
@@ -49,7 +50,15 @@ export default function Contact() {
           </div>
 
           {/* Contact cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem", marginBottom: "3rem" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 280px))",
+              justifyContent: "center",
+              gap: "1rem",
+              marginBottom: "3rem",
+            }}
+          >
             {contactInfo.map((info) => (
               <PrismaticCard key={info.label} className="glass-card">
                 <a
@@ -58,7 +67,9 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   style={{ textDecoration: "none", display: "block", padding: "1.5rem" }}
                 >
-                  <div style={{ fontSize: "1.8rem", marginBottom: "0.75rem" }}>{info.icon}</div>
+                  <div style={{ fontSize: "1.8rem", marginBottom: "0.75rem", color: info.color, lineHeight: 1 }}>
+                    <info.icon size={30} color={info.color} />
+                  </div>
                   <div style={{ fontSize: "0.72rem", color: info.color, fontFamily: "monospace", letterSpacing: "0.12em", marginBottom: "0.35rem", textTransform: "uppercase" }}>
                     {info.label}
                   </div>
