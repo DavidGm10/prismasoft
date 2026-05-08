@@ -5,7 +5,6 @@
 // ============================================================
 import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
-import PrismaticCard from "../components/PrismaticCard";
 
 // ─── CONFIGURACIÓN DE EMAILJS ─────────────────────────────
 // Para que el formulario funcione y lleguen los datos a tu correo:
@@ -141,7 +140,7 @@ export default function WorkWithUs() {
 
           {/* Success state */}
           {status === "success" ? (
-            <PrismaticCard className="glass-card" style={{ padding: "4rem 2rem", textAlign: "center" }}>
+            <div className="glass-card" style={{ padding: "4rem 2rem", textAlign: "center" }}>
               <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>✅</div>
               <h2 style={{ fontSize: "1.6rem", fontWeight: "700", color: "var(--green)", marginBottom: "0.75rem", fontFamily: "'Exo 2', sans-serif" }}>
                 ¡Mensaje enviado!
@@ -152,9 +151,9 @@ export default function WorkWithUs() {
               <button className="btn-neon" onClick={() => setStatus("idle")}>
                 Enviar otro mensaje
               </button>
-            </PrismaticCard>
+            </div>
           ) : (
-            <PrismaticCard className="glass-card" style={{ padding: "2.5rem" }}>
+            <div className="glass-card" style={{ padding: "2.5rem" }}>
               <form onSubmit={handleSubmit} noValidate>
                 {/* Row: Name + Company */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.25rem" }}>
@@ -338,10 +337,7 @@ export default function WorkWithUs() {
                   }}
                 >
                   {status === "loading" ? (
-                    <>
-                      <span style={{ animation: "blink 1s step-end infinite" }}>▋</span>
-                      Enviando...
-                    </>
+                    "Enviando..."
                   ) : (
                     "Enviar solicitud →"
                   )}
@@ -351,7 +347,7 @@ export default function WorkWithUs() {
                   📩 Te responderemos en menos de 48 horas hábiles
                 </p>
               </form>
-            </PrismaticCard>
+            </div>
           )}
         </div>
       </section>
