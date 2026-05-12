@@ -22,14 +22,14 @@ const contactInfo = [
     color: "#39ff14",
     hint: "Disponible L-V, 9am-6pm",
   },
-  {
-    icon: IconLinkedIn,
-    label: "LinkedIn",
-    value: "/company/prismasoft",
-    link: "https://linkedin.com/company/prismasoft",
-    color: "#0066ff",
-    hint: "Síguenos para novedades",
-  },
+  //{
+    //icon: IconLinkedIn,
+    //label: "LinkedIn",
+    //value: "/company/prismasoft",
+    //link: "https://linkedin.com/company/prismasoft",
+    //color: "#0066ff",
+    //hint: "Síguenos para novedades",
+  //},
 ];
 
 export default function Contact() {

@@ -7,6 +7,23 @@ import MainLayout from "../layouts/MainLayout";
 import PrismaticCard from "../components/PrismaticCard";
 import { team } from "../data/index";
 
+const socialLabels = {
+  github: "GitHub",
+  linkedin: "LinkedIn",
+  twitter: "Twitter/X",
+};
+
+const socialIcons = {
+  github: "🐙",
+  linkedin: "💼",
+  twitter: "🐦",
+};
+
+function getSocialUrl(url) {
+  if (!url || url === "#") return null;
+  return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+}
+
 export default function Team() {
   return (
     <MainLayout>
@@ -156,26 +173,36 @@ export default function Team() {
 
                   {/* Social links */}
                   <div style={{ display: "flex", gap: "0.75rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "1rem" }}>
-                    {Object.entries(member.social).map(([platform, url]) => (
-                      <a
-                        key={platform}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontSize: "0.72rem",
-                          color: "rgba(255,255,255,0.4)",
-                          textDecoration: "none",
-                          textTransform: "capitalize",
-                          transition: "color 0.2s ease",
-                          fontFamily: "monospace",
-                        }}
-                        onMouseEnter={(e) => (e.target.style.color = member.color)}
-                        onMouseLeave={(e) => (e.target.style.color = "rgba(255,255,255,0.4)")}
-                      >
-                        {platform === "github" ? "🐙" : platform === "linkedin" ? "💼" : "🐦"} {platform}
-                      </a>
-                    ))}
+                    {Object.entries(member.social).map(([platform, url]) => {
+                      const socialUrl = getSocialUrl(url);
+                      const label = socialLabels[platform] || platform;
+                      const content = `${socialIcons[platform] || "🔗"} ${label}`;
+
+                      if (!socialUrl) return null;
+
+                      return (
+                        <a
+                          key={platform}
+                          href={socialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Abrir ${label} de ${member.name}`}
+                          style={{
+                            fontSize: "0.72rem",
+                            color: "rgba(255,255,255,0.4)",
+                            textDecoration: "none",
+                            textTransform: "capitalize",
+                            transition: "color 0.2s ease",
+                            fontFamily: "monospace",
+                            cursor: "pointer",
+                          }}
+                          onMouseEnter={(e) => (e.currentTarget.style.color = member.color)}
+                          onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}
+                        >
+                          {content}
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </PrismaticCard>

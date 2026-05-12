@@ -74,32 +74,40 @@ export const services = [
 // ─── TECNOLOGÍAS ─────────────────────────────────────────
 export const technologies = [
   { name: "React", icon: "⚛️", color: "#61DAFB" },
+  { name: "React Native", icon: "📱", color: "#61DAFB" },
   { name: "Node.js", icon: "🟩", color: "#339933" },
   { name: "NestJS", icon: "🔴", color: "#E0234E" },
-  { name: "TypeScript", icon: "🔷", color: "#3178C6" },
+  { name: "TypeScript / JavaScript", icon: "🔷", color: "#3178C6" },
+  { name: ".NET", icon: "💜", color: "#512BD4" },
+  { name: "Python", icon: "🐍", color: "#3776AB" },
+  { name: "FastAPI", icon: "⚡", color: "#009688" },
   { name: "PostgreSQL", icon: "🐘", color: "#336791" },
-  { name: "Prisma ORM", icon: "▲", color: "#2D3748" },
+  { name: "MongoDB", icon: "🍃", color: "#47A248" },
+  { name: "Firebase", icon: "🔥", color: "#FFCA28" },
   { name: "Docker", icon: "🐳", color: "#2496ED" },
-  { name: "GitHub", icon: "🐙", color: "#ffffff" },
+  { name: "AWS S3", icon: "☁️", color: "#FF9900" },
+  { name: "AWS EC2", icon: "☁️", color: "#FF9900" },
+  { name: "AWS Lambda", icon: "☁️", color: "#FF9900" },
+  { name: "AWS RDS", icon: "☁️", color: "#FF9900" },
   { name: "TailwindCSS", icon: "🌊", color: "#38B2AC" },
   { name: "Next.js", icon: "▲", color: "#ffffff" },
-  { name: "Firebase", icon: "🔥", color: "#FFCA28" },
-  { name: "MongoDB", icon: "🍃", color: "#47A248" },
+  { name: "Vite", icon: "⚡", color: "#646CFF" },
+  { name: "GitHub", icon: "🐙", color: "#ffffff" },
 ];
 
 // ─── PROYECTOS ───────────────────────────────────────────
 export const projects = [
   {
     id: 1,
-    name: "RestaurantOS",
-    description: "Sistema completo de gestión para restaurantes: pedidos en tiempo real, mesas, inventario, facturación y reportes analíticos.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Socket.io"],
-    status: "Producción",
-    statusColor: "#39ff14",
+    name: "BrokerMetrics",
+    description: "Dashboard financiero con visualización de métricas, seguimiento de inversiones, alertas y reportes exportables.",
+    technologies: ["React + Vite", "TypeScript", "Material UI", "Chart.js", "PostgreSQL"],
+    status: "Desarrollo",
+    statusColor: "#0066ff",
     demo: "#",
     github: "#",
-    image: null, // Reemplaza con URL de imagen real
-    color: "#00f5ff",
+    image: "/src/assets/projects/brokermetrics.png", // Reemplaza con URL de imagen real
+    color: "#0066ff",
   },
   {
     id: 2,
@@ -110,20 +118,20 @@ export const projects = [
     statusColor: "#39ff14",
     demo: "#",
     github: "#",
-    image: null,
+    image: null, // Reemplaza con URL de imagen real
     color: "#a855f7",
   },
   {
     id: 3,
-    name: "FinanceHub",
-    description: "Dashboard financiero con visualización de métricas, seguimiento de inversiones, alertas y reportes exportables.",
-    technologies: ["React", "TypeScript", "D3.js", "Firebase"],
-    status: "Beta",
-    statusColor: "#ffd700",
+    name: "RestaurantOS",
+    description: "Sistema completo de gestión para restaurantes: pedidos en tiempo real, mesas, inventario, facturación y reportes analíticos.",
+    technologies: ["React", "Node.js", "PostgreSQL", "Socket.io"],
+    status: "Producción",
+    statusColor: "#39ff14",
     demo: "#",
     github: "#",
-    image: null,
-    color: "#ff006e",
+    image: null, // Reemplaza con URL de imagen real
+    color: "#00f5ff",
   },
   {
     id: 4,
@@ -154,12 +162,12 @@ export const projects = [
     name: "DataSync API",
     description: "Plataforma de integración y sincronización de APIs empresariales con monitoreo, logs y webhooks en tiempo real.",
     technologies: ["Node.js", "GraphQL", "Redis", "AWS"],
-    status: "Producción",
-    statusColor: "#39ff14",
+    status: "Beta",
+    statusColor: "#ffd700",
     demo: "#",
     github: "#",
     image: null,
-    color: "#0066ff",
+    color: "#ff006e",
   },
 ];
 
@@ -174,13 +182,12 @@ export const team = [
     role: "Full Stack Developer",
     specialty: "Arquitectura de software y sistemas escalables",
     bio: "Apasionado por construir soluciones robustas que impactan negocios reales. Especialista en arquitecturas modernas y experiencias de usuario fluidas.", // ← Tu descripción
-    photo: null,                     // ← "/src/assets/team/alex.jpg"
+    photo: "/src/assets/team/dylan.png",                     // ← "/src/assets/team/alex.jpg"
     technologies: ["React", "Node.js", "PostgreSQL", "Docker"],
-    experience: "3+ años",
+    experience: "5+ años",
     social: {
-      github: "#",                   // ← Tu GitHub
-      linkedin: "#",                 // ← Tu LinkedIn
-      twitter: "#",                  // ← Tu Twitter/X
+      github: "https://github.com/DylanYam033",                   // ← Tu GitHub
+      linkedin: "https://www.linkedin.com/in/dylanyam033/"                 // ← Tu LinkedIn                // ← Tu Twitter/X
     },
     color: "#00f5ff",
   },
@@ -193,7 +200,7 @@ export const team = [
     photo: null,
     technologies: ["NestJS", "TypeScript", "Prisma", "Redis"],
     experience: "4+ años",
-    social: { github: "#", linkedin: "#", twitter: "#" },
+    social: { github: "https://github.com/jose-vanegas22", linkedin: "https://www.linkedin.com/in/jose-david-vanegas-m-264b3a3bb/" },
     color: "#a855f7",
   },
   {
@@ -202,36 +209,36 @@ export const team = [
     role: "Frontend Developer",
     specialty: "UI/UX e interfaces interactivas",
     bio: "Diseñador y desarrollador frontend enfocado en crear experiencias visualmente impactantes que convierten visitantes en clientes.",
-    photo: null,
+    photo: "/src/assets/team/david.png",
     technologies: ["React", "Next.js", "TailwindCSS", "Framer"],
-    experience: "3+ años",
-    social: { github: "#", linkedin: "#", twitter: "#" },
+    experience: "+ años",
+    social: { github: "https://github.com/DavidGm10", linkedin: "https://www.linkedin.com/in/wilson-david-g%C3%B3mez-g%C3%B3mez-383817252/"},
     color: "#ff006e",
   },
-  {
-    id: 4,
-    name: "Valentina Cruz",
-    role: "UI/UX Designer",
-    specialty: "Diseño centrado en el usuario y sistemas de diseño",
-    bio: "Creo interfaces que los usuarios aman usar. Fusiono estética y funcionalidad para entregar productos digitales que destacan.",
-    photo: null,
-    technologies: ["Figma", "Adobe XD", "Prototyping", "Framer"],
-    experience: "5+ años",
-    social: { github: "#", linkedin: "#", twitter: "#" },
-    color: "#39ff14",
-  },
-  {
-    id: 5,
-    name: "Andrés López",
-    role: "Database Architect",
-    specialty: "Modelado de datos y optimización de queries",
-    bio: "Experto en el diseño e implementación de bases de datos de alto rendimiento. Garantizo que tus datos estén seguros y sean accesibles.",
-    photo: null,
-    technologies: ["PostgreSQL", "MongoDB", "Redis", "Prisma"],
-    experience: "4+ años",
-    social: { github: "#", linkedin: "#", twitter: "#" },
-    color: "#ffd700",
-  },
+  //{ DEJO ESTA PARTE COMENTADA, EN CASO DE QUE SEA AGREGADO ALGUIEN MAS AL EQUIPO. 
+    //id: 4,
+    //name: "Valentina Cruz",
+    //role: "UI/UX Designer",
+    //specialty: "Diseño centrado en el usuario y sistemas de diseño",
+    //bio: "Creo interfaces que los usuarios aman usar. Fusiono estética y funcionalidad para entregar productos digitales que destacan.",
+    //photo: null,
+    //technologies: ["Figma", "Adobe XD", "Prototyping", "Framer"],
+    //experience: "5+ años",
+    //social: { github: "#", linkedin: "#"},
+    //color: "#39ff14",
+  //},
+  //{
+    //id: 5,
+    //name: "Andrés López",
+    //role: "Database Architect",
+    //specialty: "Modelado de datos y optimización de queries",
+    //bio: "Experto en el diseño e implementación de bases de datos de alto rendimiento. Garantizo que tus datos estén seguros y sean accesibles.",
+    //photo: null,
+    //technologies: ["PostgreSQL", "MongoDB", "Redis", "Prisma"],
+    //experience: "4+ años",
+    //social: { github: "#", linkedin: "#"},
+    //color: "#ffd700",
+  //},
 ];
 
 // ─── PROCESO DE TRABAJO ──────────────────────────────────
@@ -316,7 +323,7 @@ export const testimonials = [
 
 // ─── STATS ───────────────────────────────────────────────
 export const stats = [
-  { value: "150+", label: "Proyectos", color: "#00f5ff" },
+  { value: "4+", label: "Proyectos", color: "#00f5ff" },
   { value: "98%", label: "Satisfacción", color: "#a855f7" },
   { value: "5+", label: "Años de experiencia", color: "#ff006e" },
   { value: "20+", label: "Tecnologías", color: "#39ff14" },
