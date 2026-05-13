@@ -22,14 +22,6 @@ const contactInfo = [
     color: "#39ff14",
     hint: "Disponible L-V, 9am-6pm",
   },
-  //{
-    //icon: IconLinkedIn,
-    //label: "LinkedIn",
-    //value: "/company/prismasoft",
-    //link: "https://linkedin.com/company/prismasoft",
-    //color: "#0066ff",
-    //hint: "Síguenos para novedades",
-  //},
 ];
 
 export default function Contact() {
@@ -103,7 +95,7 @@ export default function Contact() {
               en contacto con una propuesta.
             </p>
             <a href="/trabaja-con-nosotros" style={{ textDecoration: "none" }}>
-              <button className="btn-primary" style={{ padding: "0.85rem 2.5rem" }}>
+              <button className="btn-primary" style={{ padding: "0.85rem 2.5rem" }}> 
                 Llenar formulario →
               </button>
             </a>
