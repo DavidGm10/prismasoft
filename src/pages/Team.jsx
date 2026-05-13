@@ -10,13 +10,13 @@ import { team } from "../data/index";
 const socialLabels = {
   github: "GitHub",
   linkedin: "LinkedIn",
-  twitter: "Twitter/X",
+  
 };
 
 const socialIcons = {
   github: "🐙",
   linkedin: "💼",
-  twitter: "🐦",
+  
 };
 
 function getSocialUrl(url) {

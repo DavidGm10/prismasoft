@@ -19,6 +19,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const isWorkWithUsPage = location.pathname === "/trabaja-con-nosotros";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -105,11 +106,13 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-          <Link to="/trabaja-con-nosotros" style={{ textDecoration: "none" }} className="cta-desktop">
-            <button className="btn-primary" style={{ padding: "0.5rem 1.25rem", fontSize: "0.72rem" }}>
-              Trabajemos juntos ✦
-            </button>
-          </Link>
+          {!isWorkWithUsPage && (
+            <Link to="/trabaja-con-nosotros" style={{ textDecoration: "none" }} className="cta-desktop">
+              <button className="btn-primary" style={{ padding: "0.5rem 1.25rem", fontSize: "0.72rem" }}>
+                Trabajemos juntos ✦
+              </button>
+            </Link>
+          )}
 
           {/* Mobile menu toggle */}
           <button
@@ -172,11 +175,13 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link to="/trabaja-con-nosotros" style={{ textDecoration: "none", marginTop: "1rem", width: "100%" }}>
-            <button className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "0.85rem" }}>
-              Trabajemos juntos ✦
-            </button>
-          </Link>
+          {!isWorkWithUsPage && (
+            <Link to="/trabaja-con-nosotros" style={{ textDecoration: "none", marginTop: "1rem", width: "100%" }}>
+              <button className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "0.85rem" }}>
+                Trabajemos juntos ✦
+              </button>
+            </Link>
+          )}
         </div>
       )}
 

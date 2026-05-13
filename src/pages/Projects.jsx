@@ -117,40 +117,7 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  {/* Buttons */}
-                  <div style={{ display: "flex", gap: "0.75rem" }}>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none", flex: 1 }}
-                    >
-                      <button
-                        className="btn-primary"
-                        style={{
-                          width: "100%",
-                          justifyContent: "center",
-                          padding: "0.55rem 1rem",
-                          fontSize: "0.65rem",
-                        }}
-                      >
-                        Demo →
-                      </button>
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <button
-                        className="btn-neon"
-                        style={{ padding: "0.55rem 1rem", fontSize: "0.65rem" }}
-                      >
-                        GitHub
-                      </button>
-                    </a>
-                  </div>
+
                 </div>
               </PrismaticCard>
             ))}

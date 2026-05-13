@@ -5,18 +5,15 @@ import { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 
 // ─── CONFIGURACIÓN ────────────────────────────────────────
-// Cambia esta URL a la de tu backend en producción
-const API_URL = "http://localhost:3000/contacto";
+const API_URL = "https://script.google.com/macros/s/AKfycbxiLAj1JSgCIqfYaDEobDahI7-oUOF4V-qA44UzcgqDBmJaxtuciriwYYhG6QG2GDGuNA/exec";
 
 const projectTypes = [
   "Aplicación Web",
-  "Sistema Empresarial (ERP/CRM)",
-  "API / Backend",
+  "Aplicación Móvil",
   "Automatización",
-  "Diseño UI/UX",
-  "Base de Datos",
-  "Software a Medida",
   "Consultoría Técnica",
+  "Diseño de interfaz",
+  "Implementación de IA",
   "Otro",
 ];
 
@@ -72,7 +69,7 @@ export default function WorkWithUs() {
     if (errors[name]) setErrors((err) => ({ ...err, [name]: "" }));
   };
 
-  // ─── ENVÍO AL BACKEND ───────────────────────────────────
+  // ─── ENVÍO AL GOOGLE SCRIPT ─────────────────────────────
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
@@ -80,25 +77,22 @@ export default function WorkWithUs() {
     setStatus("loading");
 
     try {
-      const res = await fetch(API_URL, {
+      const payload = {
+        name: form.name.trim(),
+        company: form.company.trim(),
+        email: form.email.trim(),
+        phone: `+57${form.phone}`,
+        projectType: form.projectType,
+        mensaje: form.message.trim(),
+      };
+
+      await fetch(API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          company: form.company,
-          email: form.email,
-          phone: form.phone,
-          projectType: form.projectType,
-          message: form.message,
-        }),
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
       });
 
-      if (!res.ok) {
-        // El backend respondió con un error HTTP (4xx, 5xx)
-        throw new Error(`Error del servidor: ${res.status}`);
-      }
-
-      // Éxito
       setStatus("success");
       setForm(initialForm);
 
@@ -316,7 +310,6 @@ export default function WorkWithUs() {
                     <span style={{ flexShrink: 0 }}>⚠</span>
                     <span>
                       No pudimos conectar con el servidor. Verifica que el backend esté corriendo
-                      en <code style={{ fontSize: "0.78rem", color: "var(--cyan)" }}>{API_URL}</code>,
                       o escríbenos a{" "}
                       <a href="mailto:prismasoftt@gmail.com" style={{ color: "var(--cyan)" }}>prismasoftt@gmail.com</a>
                     </span>
