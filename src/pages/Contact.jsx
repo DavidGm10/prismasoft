@@ -3,7 +3,8 @@
 // ============================================================
 import MainLayout from "../layouts/MainLayout";
 import PrismaticCard from "../components/PrismaticCard";
-import { IconEmail, IconLinkedIn, IconWhatsApp } from "../components/Icons";
+import { IconEmail, IconWhatsApp } from "../components/Icons";
+import { Link } from "react-router-dom";
 
 const contactInfo = [
   {
@@ -94,11 +95,11 @@ export default function Contact() {
               ¿Tienes un proyecto en mente? Completa nuestro formulario detallado y nos pondremos
               en contacto con una propuesta.
             </p>
-            <a href="/trabaja-con-nosotros" style={{ textDecoration: "none" }}>
+            <Link to="/trabaja-con-nosotros" style={{ textDecoration: "none" }}>
               <button className="btn-primary" style={{ padding: "0.85rem 2.5rem" }}> 
                 Llenar formulario →
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -2,6 +2,9 @@
 // PrismaSoft — Data Layer
 // Edita este archivo para actualizar contenido de la web
 // ============================================================
+import dylanImg from "../assets/team/dylan.png";
+import vanegasImg from "../assets/team/vanegas.png";
+import davidImg from "../assets/team/david.png";
 
 // ─── SERVICIOS ────────────────────────────────────────────
 export const services = [
@@ -181,16 +184,16 @@ export const projects = [
 export const team = [
   {
     id: 1,
-    name: "Dylan Antonio Yampuezan",           // ← Cambia tu nombre
+    name: "Dylan Antonio Yampuezan",
     role: "Full Stack Developer",
     specialty: "Arquitectura de software y sistemas escalables",
-    bio: "Apasionado por construir soluciones robustas que impactan negocios reales. Especialista en arquitecturas modernas y experiencias de usuario fluidas.", // ← Tu descripción
-    photo: "/src/assets/team/dylan.png",                     // ← "/src/assets/team/alex.jpg"
+    bio: "Apasionado por construir soluciones robustas que impactan negocios reales.",
+    photo: dylanImg,
     technologies: ["React", "Node.js", "PostgreSQL", "Docker", ".Net", "AWS"],
     experience: "5+ años",
     social: {
-      github: "https://github.com/DylanYam033",                   // ← Tu GitHub
-      linkedin: "https://www.linkedin.com/in/dylanyam033/"                 // ← Tu LinkedIn                // ← Tu Twitter/X
+      github: "https://github.com/DylanYam033",
+      linkedin: "https://www.linkedin.com/in/dylanyam033/"
     },
     color: "#00f5ff",
   },
@@ -199,11 +202,14 @@ export const team = [
     name: "Jose David Vanegas Martinez",
     role: "Backend Developer",
     specialty: "APIs, microservicios y bases de datos",
-    bio: "Arquitecta de sistemas de alto rendimiento. Convierte requerimientos complejos en soluciones elegantes y eficientes.",
-    photo: "/src/assets/team/vanegas.png",
+    bio: "Arquitecta de sistemas de alto rendimiento.",
+    photo: vanegasImg,
     technologies: ["NestJS", "TypeScript", "Prisma", "Redis"],
     experience: "4+ años",
-    social: { github: "https://github.com/jose-vanegas22", linkedin: "https://www.linkedin.com/in/jose-david-vanegas-m-264b3a3bb/" },
+    social: {
+      github: "https://github.com/jose-vanegas22",
+      linkedin: "https://www.linkedin.com/in/jose-david-vanegas-m-264b3a3bb/"
+    },
     color: "#a855f7",
   },
   {
@@ -211,11 +217,14 @@ export const team = [
     name: "Wilson David Gomez Gomez",
     role: "Frontend Developer",
     specialty: "UI/UX e interfaces interactivas",
-    bio: "Diseñador y desarrollador frontend enfocado en crear experiencias visualmente impactantes que convierten visitantes en clientes.",
-    photo: "/src/assets/team/david.png",
+    bio: "Diseñador frontend enfocado en experiencias impactantes.",
+    photo: davidImg,
     technologies: ["React", "Next.js", "TailwindCSS", "Angular"],
     experience: "4+ años",
-    social: { github: "https://github.com/DavidGm10", linkedin: "https://www.linkedin.com/in/wilson-david-g%C3%B3mez-g%C3%B3mez-383817252/"},
+    social: {
+      github: "https://github.com/DavidGm10",
+      linkedin: "https://www.linkedin.com/in/wilson-david-g%C3%B3mez-g%C3%B3mez-383817252/"
+    },
     color: "#ff006e",
   },
   //{ DEJO ESTA PARTE COMENTADA, EN CASO DE QUE SEA AGREGADO ALGUIEN MAS AL EQUIPO. 
