@@ -5,7 +5,7 @@
 import dylanImg from "../assets/team/dylan.png";
 import vanegasImg from "../assets/team/vanegas.png";
 import davidImg from "../assets/team/david.png";
-
+import brockermetricsImg from "../assets/projects/brokermetrics.png";
 // ─── SERVICIOS ────────────────────────────────────────────
 export const services = [
   {
@@ -112,7 +112,7 @@ export const projects = [
     statusColor: "#0066ff",
     demo: "#",
     github: "#",
-    image: "/src/assets/projects/brokermetrics.png", // Reemplaza con URL de imagen real
+    image: brockermetricsImg, // Reemplaza con URL de imagen real
     color: "#0066ff",
   },
   {
