@@ -6,6 +6,7 @@ import dylanImg from "../assets/team/dylan.png";
 import vanegasImg from "../assets/team/vanegas.png";
 import davidImg from "../assets/team/david.png";
 import brockermetricsImg from "../assets/projects/brokermetrics.png";
+import barberappImg from "../assets/projects/barberapp.png";
 // ─── SERVICIOS ────────────────────────────────────────────
 export const services = [
   {
@@ -105,6 +106,18 @@ export const technologies = [
 export const projects = [
   {
     id: 1,
+    name: "BarberApp",
+    description: "Sistema de administración para barberías que permite gestionar citas, clientes, barberos, servicios, horarios, pagos y estadísticas del negocio desde un panel centralizado.",
+    technologies: ["React", "Supabase", "TypeScript", "Tailwind CSS", "Vite"],
+    status: "Producción",
+    statusColor: "#39ff14",
+    demo: "https://agenda.prismasoft.co/login",
+    github: "#",
+    image: barberappImg, // Reemplaza con URL de imagen real
+    color: "#0D9488",
+  },
+  {
+    id: 2,
     name: "BrokerMetrics",
     description: "Dashboard financiero con visualización de métricas, seguimiento de inversiones, alertas y reportes exportables.",
     technologies: ["React + Vite", "TypeScript", "Material UI", "Chart.js", "PostgreSQL"],
@@ -116,24 +129,14 @@ export const projects = [
     color: "#0066ff",
   },
   {
-    id: 2,
-    name: "AdminPro Dashboard",
-    description: "Plataforma administrativa empresarial con control de usuarios, roles, reportes en tiempo real y analytics avanzados.",
-    technologies: ["Next.js", "NestJS", "Prisma", "Charts.js"],
-    status: "Producción",
-    statusColor: "#39ff14",
-    demo: "#",
-    github: "#",
-    image: null, // Reemplaza con URL de imagen real
-    color: "#a855f7",
-  },
-  {
     id: 3,
     name: "RestaurantOS",
     description: "Sistema completo de gestión para restaurantes: pedidos en tiempo real, mesas, inventario, facturación y reportes analíticos.",
     technologies: ["React", "Node.js", "PostgreSQL", "Socket.io"],
-    status: "Producción",
-    statusColor: "#39ff14",
+    //status: "Producción",
+    //statusColor: "#39ff14",
+    status: "Desarrollo",
+    statusColor: "#0066ff",
     demo: "#",
     github: "#",
     image: null, // Reemplaza con URL de imagen real
@@ -144,8 +147,10 @@ export const projects = [
     name: "StockMaster",
     description: "Sistema de inventario y gestión de stock con control de entradas/salidas, proveedores, alertas y código de barras.",
     technologies: ["Vue.js", "Node.js", "MongoDB", "Express"],
-    status: "Producción",
-    statusColor: "#39ff14",
+    //status: "Producción",
+    //statusColor: "#39ff14",
+    status: "Desarrollo",
+    statusColor: "#0066ff",
     demo: "#",
     github: "#",
     image: null,
