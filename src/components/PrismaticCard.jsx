@@ -11,6 +11,7 @@ export default function PrismaticCard({
   intensity = 18, // degrees of tilt
   glareOpacity = 0.6,
   borderGlow = true,
+  onClick,
 }) {
   const cardRef = useRef(null);
   const glareRef = useRef(null);
@@ -107,9 +108,10 @@ export default function PrismaticCard({
         transition: "transform 0.5s ease",
         borderRadius: "16px",
         overflow: "hidden",
-        cursor: "pointer",
+        cursor: onClick ? "pointer" : "default",
         ...style,
       }}
+      onClick={onClick}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       onTouchMove={onTouchMove}

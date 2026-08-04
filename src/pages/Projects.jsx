@@ -30,6 +30,11 @@ export default function Projects() {
                 key={project.id}
                 className="glass-card"
                 style={{ overflow: "hidden" }}
+                onClick={() => {
+                  if (project.demo && project.demo !== "#") {
+                    window.open(project.demo, "_blank", "noopener,noreferrer");
+                  }
+                }}
               >
                 {/* Image placeholder */}
                 <div
